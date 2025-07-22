@@ -1,0 +1,53 @@
+# Task ID: 9
+# Title: Implement Drag & Drop Task Reordering
+# Status: pending
+# Dependencies: 7
+# Priority: high
+# Description: Implement drag and drop functionality for visual task prioritization and reordering using react-beautiful-dnd.
+# Details:
+1. Install and configure react-beautiful-dnd: `npm install react-beautiful-dnd @types/react-beautiful-dnd`
+2. Create DraggableTaskList component that wraps TaskList
+3. Implement Droppable container for task lists
+4. Create Draggable wrapper for TaskItem components
+5. Implement reordering logic to update task order property
+6. Add visual feedback during drag operations
+7. Create API function to persist new task order
+8. Implement optimistic UI updates for drag operations
+9. Add keyboard accessibility for drag and drop operations
+10. Handle edge cases like dragging between different status columns
+11. Ensure smooth animations during drag operations with CSS transitions
+
+# Test Strategy:
+Test drag and drop functionality between different positions. Verify task order is persisted after page refresh. Test keyboard accessibility for drag operations. Verify visual feedback during drag operations.
+
+# Subtasks:
+## 1. Install and Configure react-beautiful-dnd [pending]
+### Dependencies: None
+### Description: Set up the project by installing react-beautiful-dnd and its type definitions, and configure the DragDropContext at the root of the relevant component tree.
+### Details:
+Run `npm install react-beautiful-dnd @types/react-beautiful-dnd` and wrap the main task list component with DragDropContext, providing an onDragEnd handler.
+
+## 2. Implement Droppable Task List Container [pending]
+### Dependencies: 9.1
+### Description: Create a Droppable component to define the area where tasks can be reordered via drag and drop.
+### Details:
+Wrap the task list in a Droppable component, assign a unique droppableId, and apply provided props and refs to the container element.
+
+## 3. Wrap Task Items with Draggable Components [pending]
+### Dependencies: 9.2
+### Description: Make each TaskItem draggable by wrapping it in a Draggable component and assigning unique draggableIds.
+### Details:
+Map over the task list and render each TaskItem inside a Draggable, passing the required index and draggableId props.
+
+## 4. Implement Task Reordering Logic and State Updates [pending]
+### Dependencies: 9.3
+### Description: Handle the onDragEnd event to update the task order in state and persist changes via API.
+### Details:
+Write the onDragEnd handler to reorder tasks in local state, trigger optimistic UI updates, and call an API function to persist the new order.
+
+## 5. Enhance Accessibility and Visual Feedback [pending]
+### Dependencies: 9.4
+### Description: Add keyboard accessibility for drag operations and implement visual feedback such as highlighting and smooth animations.
+### Details:
+Ensure keyboard controls work for drag and drop, add CSS transitions for smooth movement, and provide visual cues during drag operations.
+

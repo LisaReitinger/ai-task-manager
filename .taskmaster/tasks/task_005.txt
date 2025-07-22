@@ -1,0 +1,55 @@
+# Task ID: 5
+# Title: Implement Project Management Core
+# Status: pending
+# Dependencies: 3
+# Priority: high
+# Description: Create the core project management functionality including project CRUD operations, listing, and status management.
+# Details:
+1. Create ProjectService with API functions for project CRUD operations
+2. Implement ProjectList component to display all user projects with:
+   - Project cards showing title, description, and progress
+   - Status indicators (active, completed, archived)
+   - Creation date
+   - Circular progress rings using SVG
+3. Create ProjectForm component for creating and editing projects
+4. Implement ProjectView component as a container for task-related components
+5. Add project status toggle functionality (active/completed/archived)
+6. Create ProjectContext to manage project state
+7. Implement project deletion with confirmation modal
+8. Add sorting options for project list (by name, date, status)
+9. Ensure all components use the Project interface defined in the PRD
+
+# Test Strategy:
+Test project creation, editing, and deletion. Verify projects list displays correctly with all required information. Test status changes are reflected immediately. Verify sorting functionality works correctly.
+
+# Subtasks:
+## 1. Develop ProjectService for CRUD Operations [pending]
+### Dependencies: None
+### Description: Implement a ProjectService module that provides API functions for creating, reading, updating, and deleting projects.
+### Details:
+The ProjectService should handle all network requests related to project data, including methods for create, read, update, and delete operations. Ensure the service adheres to the Project interface defined in the PRD.
+
+## 2. Implement ProjectList Component with Sorting and Status Indicators [pending]
+### Dependencies: 5.1
+### Description: Create a ProjectList component to display all user projects, including project cards, status indicators, creation date, progress visualization, and sorting options.
+### Details:
+Project cards must show title, description, progress (with SVG circular rings), status (active, completed, archived), and creation date. Add sorting options by name, date, and status.
+
+## 3. Create ProjectForm Component for Project Creation and Editing [pending]
+### Dependencies: 5.1
+### Description: Develop a ProjectForm component that allows users to create new projects and edit existing ones, integrating with ProjectService.
+### Details:
+The form should support both creation and editing modes, validate input fields, and update the project list upon submission.
+
+## 4. Build ProjectView Container and ProjectContext State Management [pending]
+### Dependencies: 5.1, 5.2, 5.3
+### Description: Implement the ProjectView container to host task-related components and create ProjectContext for managing project state across components.
+### Details:
+ProjectView should serve as the main container for project details and related tasks. ProjectContext must provide state and actions for all project operations.
+
+## 5. Add Project Status Toggle, Deletion with Confirmation, and Status Management [pending]
+### Dependencies: 5.1, 5.2, 5.4
+### Description: Implement functionality to toggle project status (active/completed/archived), delete projects with confirmation, and ensure status changes are reflected immediately.
+### Details:
+Provide UI controls for status toggling and deletion, including a confirmation modal for deletions. Ensure all status changes and deletions update the UI and state promptly.
+

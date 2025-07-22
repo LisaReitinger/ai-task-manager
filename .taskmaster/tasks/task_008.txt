@@ -1,0 +1,53 @@
+# Task ID: 8
+# Title: Implement Subtask Functionality
+# Status: pending
+# Dependencies: 7
+# Priority: medium
+# Description: Extend the task management system to support hierarchical subtasks with proper parent-child relationships.
+# Details:
+1. Update TaskItem component to display subtasks
+2. Create SubtaskList component for rendering child tasks
+3. Implement subtask creation form within a parent task
+4. Add visual indentation for subtask hierarchy
+5. Implement cascade completion (completing a parent completes all children)
+6. Add subtask count to parent tasks
+7. Create collapsible subtask lists
+8. Update progress calculation to include subtask completion
+9. Ensure proper data structure for parent-child relationships using the parentTaskId field
+10. Add ability to convert subtasks to main tasks and vice versa
+11. Implement drag and drop for subtask reordering within a parent
+
+# Test Strategy:
+Test subtask creation and display. Verify parent-child relationships are maintained correctly. Test cascade completion functionality. Verify progress calculation includes subtasks correctly.
+
+# Subtasks:
+## 1. Design Data Structure for Hierarchical Subtasks [pending]
+### Dependencies: None
+### Description: Define and implement a data model that supports parent-child relationships between tasks and subtasks, ensuring each subtask references its parent via a parentTaskId field.
+### Details:
+Update the backend and data schema to allow tasks to have multiple levels of subtasks, maintaining clear parent-child links. Ensure the structure supports operations like creation, deletion, and conversion between main tasks and subtasks.
+
+## 2. Implement Subtask Creation and Display Components [pending]
+### Dependencies: 8.1
+### Description: Develop UI components for creating subtasks within a parent task and displaying them in a hierarchical, indented list.
+### Details:
+Update the TaskItem component to render subtasks. Create a SubtaskList component to display child tasks with visual indentation. Add a subtask creation form within the parent task view.
+
+## 3. Implement Cascade Completion and Progress Calculation [pending]
+### Dependencies: 8.2
+### Description: Ensure that completing a parent task marks all its subtasks as complete, and update progress calculations to include subtask completion.
+### Details:
+Add logic so that when a parent task is marked complete, all child subtasks are also completed. Update progress indicators to reflect the completion status of subtasks.
+
+## 4. Add Subtask Management Features [pending]
+### Dependencies: 8.2
+### Description: Implement features for subtask count display, collapsible subtask lists, and the ability to convert subtasks to main tasks and vice versa.
+### Details:
+Display the number of subtasks on parent tasks. Allow users to collapse or expand subtask lists. Provide UI and logic to convert a subtask to a main task and vice versa.
+
+## 5. Enable Subtask Reordering with Drag and Drop [pending]
+### Dependencies: 8.2
+### Description: Implement drag and drop functionality to reorder subtasks within a parent task, updating their order in the data structure.
+### Details:
+Integrate a drag and drop library to allow users to reorder subtasks visually. Update the backend to persist the new order.
+

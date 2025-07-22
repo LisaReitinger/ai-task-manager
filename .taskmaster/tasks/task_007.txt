@@ -1,0 +1,53 @@
+# Task ID: 7
+# Title: Implement Task Management Foundation
+# Status: pending
+# Dependencies: 5
+# Priority: high
+# Description: Create the core task management functionality including task CRUD operations, status tracking, and basic task display.
+# Details:
+1. Create TaskService with API functions for task operations
+2. Implement TaskList component to display tasks for a selected project
+3. Create TaskItem component to display individual task details
+4. Implement task creation form with fields for title, description, priority, and due date
+5. Add task status management (not_started, in_progress, completed)
+6. Implement task editing functionality
+7. Create task deletion with confirmation
+8. Add basic task ordering by creation date or priority
+9. Ensure all components use the Task interface defined in the PRD
+10. Implement task count and basic progress calculation
+11. Add estimated hours and actual hours tracking
+
+# Test Strategy:
+Test task creation, editing, and deletion. Verify task status changes are reflected immediately. Test task listing with various filters. Verify task ordering works correctly.
+
+# Subtasks:
+## 1. Develop TaskService with CRUD API Functions [pending]
+### Dependencies: None
+### Description: Implement a TaskService module that provides API functions for creating, reading, updating, and deleting tasks, ensuring all operations conform to the Task interface defined in the PRD.
+### Details:
+The TaskService should handle all backend interactions for task management, including endpoints for task creation, retrieval, updating, and deletion. It must support status updates, ordering, and hours tracking.
+
+## 2. Implement TaskList Component for Project-Based Display [pending]
+### Dependencies: 7.1
+### Description: Create a TaskList UI component that displays tasks associated with a selected project, supporting ordering by creation date or priority.
+### Details:
+The TaskList should fetch tasks from TaskService, display them in a list, and allow sorting by creation date or priority. It must update in real-time as tasks are added, edited, or deleted.
+
+## 3. Create TaskItem Component for Individual Task Details [pending]
+### Dependencies: 7.2
+### Description: Develop a TaskItem component to render individual task details, including title, description, priority, status, due date, estimated hours, and actual hours.
+### Details:
+TaskItem should support inline status updates, display all relevant fields, and provide controls for editing and deleting the task.
+
+## 4. Implement Task Creation and Editing Forms [pending]
+### Dependencies: 7.1, 7.2
+### Description: Build forms for creating and editing tasks, including fields for title, description, priority, due date, estimated hours, and actual hours.
+### Details:
+Forms should validate input, support both creation and editing modes, and integrate with TaskService for data persistence.
+
+## 5. Add Task Status Management and Progress Calculation [pending]
+### Dependencies: 7.1, 7.2, 7.3
+### Description: Implement logic for managing task statuses (not_started, in_progress, completed) and calculate basic progress metrics such as task count and completion percentage.
+### Details:
+Status changes should be reflected in both the UI and backend. Progress calculation should aggregate task statuses for display in the TaskList.
+

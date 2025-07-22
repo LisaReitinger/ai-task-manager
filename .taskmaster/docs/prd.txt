@@ -1,0 +1,260 @@
+# AI Task Manager - Product Requirements Document
+
+## 🎯 Project Overview
+
+**Vision:** An intelligent, multi-project task management application that transforms natural language project goals into actionable, prioritized task lists using AI.
+
+**Target Users:** Individual developers, freelancers, and small teams who want AI-assisted project planning and task management.
+
+**Core Value Proposition:** Eliminate the overhead of manual task breakdown by letting AI create comprehensive project plans from simple descriptions.
+
+**Tech Stack:** React 18 + TypeScript + Vite + Tailwind CSS + Headless UI + react-beautiful-dnd
+
+**Target Complexity:** Beginner-friendly - Focus on creating reusable React components and following clean architecture principles.
+
+---
+
+## 🚀 Core Features
+
+### 1. Authentication System
+- User Registration/Login with email and password
+- Session Management with JWT tokens
+- Basic Profile Management (name, email, preferences)
+- Form validation and error handling
+- Protected routes and auth guards
+
+### 2. Project Management
+- Multi-Project Support - Users can create and manage multiple projects
+- Project Dashboard - Overview of all projects with progress indicators
+- Project Creation - Simple form to initialize new projects
+- Project CRUD operations (create, read, update, delete)
+- Project status management (active, completed, archived)
+
+### 3. AI-Powered Task Generation
+- Natural Language Input - Users describe project goals in plain English
+- Intelligent Task Breakdown - AI creates tasks, subtasks, priorities, and ETAs
+- Contextual Understanding - AI considers project type and complexity
+- Error handling for AI API failures
+- Task generation validation and user feedback
+
+### 4. Task Management
+- CRUD Operations - Create, read, update, delete tasks and subtasks
+- Manual Adjustments - Users can modify AI-generated priorities and ETAs
+- Task Status Tracking - Not Started, In Progress, Completed
+- Subtask Support - Hierarchical task structure
+- Task ordering and prioritization
+- Due date management
+
+### 5. Enhanced User Experience - Priority Features
+- **Progress Visualization** - Progress bars and completion percentages for projects and tasks
+- **Drag & Drop Reordering** - Visual task prioritization using react-beautiful-dnd
+- **Dark/Light Theme Toggle** - Professional theme switching with proper contrast
+- **Task Filtering** - Filter by status, priority, project, date
+- **Search Functionality** - Quick task and project search
+
+---
+
+## 🏗️ Technical Architecture
+
+### Component Structure
+```
+App
+├── AuthProvider (Context)
+├── ThemeProvider (Context)
+├── Router
+│   ├── LoginPage
+│   ├── RegisterPage
+│   └── Dashboard
+│       ├── ProjectList
+│       ├── ProjectView
+│       │   ├── TaskInput
+│       │   ├── TaskList
+│       │   │   └── TaskItem
+│       │   ├── TaskFilters
+│       │   └── ProgressBar
+│       └── Sidebar
+└── SharedComponents
+    ├── ThemeToggle
+    ├── LoadingSpinner
+    └── Modal
+```
+
+### Data Models
+
+**User Interface**
+```typescript
+interface User {
+  id: string;
+  email: string;
+  name: string;
+  preferences: {
+    theme: 'light' | 'dark';
+    defaultView: string;
+  };
+}
+```
+
+**Project Interface**
+```typescript
+interface Project {
+  id: string;
+  userId: string;
+  title: string;
+  description: string;
+  createdAt: Date;
+  updatedAt: Date;
+  progress: number; // 0-100
+  status: 'active' | 'completed' | 'archived';
+}
+```
+
+**Task Interface**
+```typescript
+interface Task {
+  id: string;
+  projectId: string;
+  parentTaskId?: string; // for subtasks
+  title: string;
+  description?: string;
+  priority: 'low' | 'medium' | 'high';
+  status: 'not_started' | 'in_progress' | 'completed';
+  estimatedHours?: number;
+  actualHours?: number;
+  dueDate?: Date;
+  order: number; // for drag & drop ordering
+  createdAt: Date;
+  updatedAt: Date;
+}
+```
+
+---
+
+## 📱 UI/UX Requirements
+
+### Design Principles
+- **Clean & Minimal** - Focus on content, not decoration
+- **Accessible** - WCAG 2.1 AA compliance
+- **Responsive** - Mobile-first design
+- **Fast** - Optimistic UI updates, lazy loading
+
+### Theme System
+- **Light Theme** - Clean whites and grays with blue accents
+- **Dark Theme** - Dark grays with proper contrast ratios
+- **Smooth Transitions** - 200ms transitions between theme switches
+
+### Progress Visualization
+- **Project Progress** - Circular progress rings on project cards
+- **Task Progress** - Linear progress bars for task lists
+- **Completion Percentages** - Numeric indicators alongside visual bars
+
+---
+
+## 🔄 Development Phases
+
+### Phase 1: Foundation Setup
+- Project configuration and build tools setup
+- TypeScript configuration and types
+- Tailwind CSS integration and base styles
+- Basic routing structure
+- Development environment optimization
+
+### Phase 2: Authentication System
+- Login and registration forms
+- JWT token management
+- Protected routes implementation
+- User context and state management
+- Form validation and error handling
+
+### Phase 3: Core Project Management
+- Project creation and listing
+- Project dashboard layout
+- Basic project CRUD operations
+- Project status management
+- Data persistence strategy
+
+### Phase 4: Task Management Foundation
+- Task creation and display
+- Task CRUD operations
+- Subtask hierarchy implementation
+- Task status and priority management
+- Task ordering system
+
+### Phase 5: AI Integration
+- AI service integration setup
+- Natural language prompt processing
+- Task generation from AI responses
+- Error handling for AI failures
+- Response validation and formatting
+
+### Phase 6: Priority Features Implementation
+- Progress visualization components
+- Drag & drop functionality
+- Dark/Light theme system
+- Task filtering capabilities
+- Search functionality
+
+### Phase 7: Polish & Optimization
+- Performance optimizations
+- Mobile responsiveness
+- Accessibility improvements
+- Error boundary implementation
+- User experience enhancements
+
+---
+
+## 📊 Success Criteria
+
+### Functional Requirements
+- Users can register, login, and manage their profile
+- Users can create, edit, and delete projects
+- Users can input natural language prompts and receive AI-generated tasks
+- Users can manually manage tasks and subtasks
+- Users can reorder tasks via drag & drop
+- Users can switch between themes
+- Users can filter and search tasks
+- Progress is accurately calculated and displayed
+
+### Technical Requirements
+- Page load time < 2 seconds
+- Mobile-responsive design
+- Proper error handling and user feedback
+- Clean, maintainable component architecture
+- TypeScript strict mode compliance
+- Accessible UI components
+
+### User Experience
+- Intuitive navigation and workflow
+- Smooth animations and transitions
+- Clear visual feedback for user actions
+- Professional appearance in both themes
+- Beginner-friendly development patterns
+
+---
+
+## ⚠️ Technical Considerations
+
+### Performance
+- Lazy loading for large project lists
+- Optimistic UI updates
+- Efficient state management
+- Image optimization and lazy loading
+
+### Security
+- Input sanitization and validation
+- Secure JWT token handling
+- Rate limiting for AI API calls
+- XSS and CSRF protection
+
+### Accessibility
+- Keyboard navigation support
+- Screen reader compatibility
+- High contrast theme support
+- Focus management for modals and dropdowns
+
+### Development Best Practices
+- Component reusability
+- Clean architecture principles
+- Comprehensive error boundaries
+- Type safety with TypeScript
+- Consistent code formatting
+- Git workflow and commit standards 
