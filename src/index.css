@@ -1,13 +1,32 @@
 @import "tailwindcss";
 
-/* Base styles */
+/* Base styles with dark mode support */
+html {
+  min-height: 100%;
+}
+
 body {
   margin: 0;
+  min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+  color: black;
+}
+
+/* Dark mode styles */
+html.dark body {
+  background-color: rgb(17, 24, 39); /* gray-900 */
+  color: white;
+}
+
+#root {
+  min-height: 100vh;
+  background-color: inherit;
+  color: inherit;
 }
 
 /* Ensure smooth transitions for theme changes */

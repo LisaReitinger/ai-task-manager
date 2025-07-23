@@ -9,7 +9,7 @@
         "testStrategy": "Verify that the development server starts without errors using `npm run dev`. Ensure TypeScript compilation works without errors. Test that Tailwind CSS is properly configured by adding a test component with Tailwind classes.",
         "priority": "high",
         "dependencies": [],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -17,43 +17,51 @@
             "description": "Create a new project using Vite with the React and TypeScript template, and verify the initial setup.",
             "dependencies": [],
             "details": "Run `npm create vite@latest ai-task-manager --template react-ts` to scaffold the project. Navigate into the project directory, install dependencies with `npm install`, and confirm the development server starts with `npm run dev`.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Verify the app runs without errors and displays the default Vite/React starter page in the browser."
           },
           {
             "id": 2,
             "title": "Install and Configure Tailwind CSS",
             "description": "Add Tailwind CSS, PostCSS, and Autoprefixer to the project, and configure Tailwind to scan all React components.",
-            "dependencies": ["1.1"],
+            "dependencies": [
+              "1.1"
+            ],
             "details": "Install Tailwind CSS and related dependencies with `npm install -D tailwindcss postcss autoprefixer`. Initialize Tailwind with `npx tailwindcss init -p`. Update `tailwind.config.js` to include all relevant file paths (e.g., './src/**/*.{js,jsx,ts,tsx}') for content scanning.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Add a test component using Tailwind classes and confirm styles are applied in the browser."
           },
           {
             "id": 3,
             "title": "Install Additional UI and Utility Libraries",
             "description": "Install Headless UI and react-beautiful-dnd (with TypeScript types) for advanced UI components and drag-and-drop functionality.",
-            "dependencies": ["1.2"],
+            "dependencies": [
+              "1.2"
+            ],
             "details": "Run `npm install @headlessui/react` and `npm install react-beautiful-dnd @types/react-beautiful-dnd` to add these libraries to the project.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Import and render a basic Headless UI component and a react-beautiful-dnd example to ensure both libraries are installed and working."
           },
           {
             "id": 4,
             "title": "Set Up Code Quality Tools and TypeScript Strict Mode",
             "description": "Install and configure ESLint, Prettier, and TypeScript strict mode for code quality and consistency.",
-            "dependencies": ["1.3"],
+            "dependencies": [
+              "1.3"
+            ],
             "details": "Install ESLint, Prettier, and related plugins with `npm install -D eslint eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/eslint-plugin @typescript-eslint/parser prettier eslint-plugin-prettier`. Configure ESLint and Prettier settings. Enable strict mode in `tsconfig.json` by setting `strict: true`.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Run ESLint and Prettier on the codebase to ensure no linting or formatting errors. Confirm TypeScript reports errors for type violations."
           },
           {
             "id": 5,
             "title": "Establish Project Structure and Initialize Git Repository",
             "description": "Create the recommended folder structure for components, contexts, hooks, pages, services, and utils. Initialize a Git repository and configure .gitignore.",
-            "dependencies": ["1.4"],
+            "dependencies": [
+              "1.4"
+            ],
             "details": "Organize the `src` directory into subfolders: components, contexts, hooks, pages, services, utils. Run `git init` in the project root and create a `.gitignore` file to exclude node_modules and build artifacts.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Verify the folder structure exists. Confirm Git is initialized and `.gitignore` is correctly excluding specified files. Make an initial commit."
           }
         ]
@@ -65,7 +73,9 @@
         "details": "1. Install React Router: `npm install react-router-dom@6`\n2. Create AuthProvider context with initial placeholder functionality\n3. Create ThemeProvider context with light/dark theme toggle functionality\n4. Set up Router component with basic routes for Login, Register, and Dashboard\n5. Create placeholder components for each route\n6. Implement basic layout components (Sidebar, Header, etc.)\n7. Create shared components:\n   - ThemeToggle: Toggle button for switching between light and dark themes\n   - LoadingSpinner: Reusable loading indicator\n   - Modal: Reusable modal component using Headless UI\n8. Implement responsive layout with Tailwind CSS breakpoints\n9. Set up lazy loading for route components using React.lazy() and Suspense",
         "testStrategy": "Test component rendering with React Testing Library. Verify that routes are correctly configured and navigable. Ensure context providers properly wrap the application and provide expected values to consumers.",
         "priority": "high",
-        "dependencies": [1],
+        "dependencies": [
+          1
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -74,32 +84,39 @@
             "description": "Install React Router v6 and configure the application's routing context using BrowserRouter. Establish the foundational routing structure for the app.",
             "dependencies": [],
             "details": "Run 'npm install react-router-dom@6'. Wrap the root component with <BrowserRouter> to enable client-side routing. Prepare the project for route definitions and navigation.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Verify that the application renders without errors and that the routing context is available. Confirm navigation between routes does not reload the page."
           },
           {
             "id": 2,
             "title": "Implement Context Providers",
             "description": "Create and integrate AuthProvider and ThemeProvider contexts to manage authentication state and theme toggling across the application.",
-            "dependencies": ["2.1"],
+            "dependencies": [
+              "2.1"
+            ],
             "details": "Develop AuthProvider with placeholder authentication logic and ThemeProvider with light/dark theme toggle functionality. Ensure both providers wrap the app and expose context values.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Test that context values are accessible in child components. Verify theme toggling updates the UI and AuthProvider exposes initial state."
           },
           {
             "id": 3,
             "title": "Define Core Routes and Placeholder Components",
             "description": "Set up the Router component with basic routes for Login, Register, and Dashboard. Create placeholder components for each route.",
-            "dependencies": ["2.1", "2.2"],
+            "dependencies": [
+              "2.1",
+              "2.2"
+            ],
             "details": "Use <Routes> and <Route> to define paths for Login, Register, and Dashboard. Implement simple placeholder components for each route to confirm navigation.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Navigate to each route and verify the correct placeholder component renders. Ensure URLs update as expected."
           },
           {
             "id": 4,
             "title": "Develop Layout and Shared UI Components",
             "description": "Implement basic layout components (Sidebar, Header) and shared components (ThemeToggle, LoadingSpinner, Modal) for consistent UI structure and functionality.",
-            "dependencies": ["2.3"],
+            "dependencies": [
+              "2.3"
+            ],
             "details": "Create Sidebar and Header components for the main layout. Build ThemeToggle for theme switching, LoadingSpinner for loading states, and Modal using Headless UI for dialogs.",
             "status": "pending",
             "testStrategy": "Render layout and shared components in the app. Test ThemeToggle switches themes, LoadingSpinner displays during loading, and Modal opens/closes as expected."
@@ -108,7 +125,9 @@
             "id": 5,
             "title": "Enable Responsive Design and Performance Enhancements",
             "description": "Implement responsive layouts using Tailwind CSS breakpoints and set up lazy loading for route components with React.lazy() and Suspense.",
-            "dependencies": ["2.4"],
+            "dependencies": [
+              "2.4"
+            ],
             "details": "Apply Tailwind CSS classes for responsive design in layout components. Use React.lazy() and Suspense to load route components asynchronously for improved performance.",
             "status": "pending",
             "testStrategy": "Resize the browser to verify responsive behavior. Confirm that route components are loaded lazily and display a loading indicator during load."
@@ -122,7 +141,9 @@
         "details": "1. Install required packages: `npm install jwt-decode axios react-hook-form zod @hookform/resolvers`\n2. Create authentication API service with functions for:\n   - register(email, password, name)\n   - login(email, password)\n   - logout()\n   - refreshToken()\n3. Implement JWT token storage in localStorage with proper security measures\n4. Complete the AuthProvider context with:\n   - User state management\n   - Login/logout functions\n   - Token refresh mechanism\n   - Loading and error states\n5. Create LoginPage and RegisterPage components with form validation using react-hook-form and zod\n6. Implement ProtectedRoute component that redirects to login if not authenticated\n7. Add form validation with error messages\n8. Implement session persistence across page refreshes\n9. Add password strength requirements and validation",
         "testStrategy": "Test registration and login flows with valid and invalid credentials. Verify JWT token storage and retrieval. Test protected routes redirect correctly when not authenticated. Verify form validation works correctly for all input fields.",
         "priority": "high",
-        "dependencies": [2],
+        "dependencies": [
+          2
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -138,7 +159,9 @@
             "id": 2,
             "title": "Implement JWT Token Storage and Security",
             "description": "Store JWT tokens securely in localStorage and implement measures to prevent common security vulnerabilities such as XSS and token leakage.",
-            "dependencies": ["3.1"],
+            "dependencies": [
+              "3.1"
+            ],
             "details": "Save JWT tokens to localStorage upon successful authentication. Implement logic to clear tokens on logout and handle token expiration. Consider using httpOnly cookies if backend supports it.",
             "status": "pending",
             "testStrategy": "Verify tokens are stored and cleared correctly. Simulate XSS scenarios to ensure tokens are not exposed. Test token expiration and refresh flows."
@@ -147,7 +170,10 @@
             "id": 3,
             "title": "Develop AuthProvider Context for State Management",
             "description": "Create an AuthProvider using React Context to manage user state, authentication status, login/logout functions, token refresh, and loading/error states across the app.",
-            "dependencies": ["3.1", "3.2"],
+            "dependencies": [
+              "3.1",
+              "3.2"
+            ],
             "details": "Implement context provider that exposes user state, authentication actions, and handles session persistence. Integrate token refresh logic and manage loading/error indicators.",
             "status": "pending",
             "testStrategy": "Test context state updates on login, logout, and token refresh. Verify user state persists across page reloads and error/loading states are handled."
@@ -156,7 +182,9 @@
             "id": 4,
             "title": "Build Authentication UI Components with Validation",
             "description": "Create LoginPage and RegisterPage components with forms using react-hook-form and zod for validation, including password strength requirements and error messages.",
-            "dependencies": ["3.3"],
+            "dependencies": [
+              "3.3"
+            ],
             "details": "Design and implement login and registration forms with real-time validation feedback. Enforce password strength and display validation errors clearly.",
             "status": "pending",
             "testStrategy": "Test form validation for all fields, including edge cases. Attempt registration and login with invalid and valid data. Verify error messages and password requirements."
@@ -165,7 +193,10 @@
             "id": 5,
             "title": "Implement Protected Routes and Session Persistence",
             "description": "Create a ProtectedRoute component that restricts access to authenticated users and redirects unauthenticated users to the login page. Ensure session persists across page refreshes.",
-            "dependencies": ["3.3", "3.4"],
+            "dependencies": [
+              "3.3",
+              "3.4"
+            ],
             "details": "Use React Router to guard protected routes. Check authentication status from AuthProvider and redirect as needed. Implement logic to restore user session from stored JWT on app load.",
             "status": "pending",
             "testStrategy": "Test access to protected routes when authenticated and unauthenticated. Verify redirection works as expected. Refresh the page and confirm session persistence."
@@ -179,7 +210,9 @@
         "details": "1. Create ProfilePage component with user information display\n2. Implement form for updating user name and email\n3. Add profile preferences section for theme and default view settings\n4. Create API service functions for:\n   - getUserProfile()\n   - updateUserProfile(userData)\n   - updateUserPreferences(preferences)\n5. Add form validation for profile updates\n6. Implement success/error notifications for profile actions\n7. Store user preferences in the User interface as specified in the PRD\n8. Add avatar upload functionality (optional enhancement)\n9. Ensure all profile data is properly typed according to the User interface",
         "testStrategy": "Test profile data retrieval and display. Verify profile updates are saved correctly. Test preference changes are applied immediately and persisted. Validate form inputs and error handling.",
         "priority": "medium",
-        "dependencies": [3],
+        "dependencies": [
+          3
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -195,7 +228,9 @@
             "id": 2,
             "title": "Develop API Service Functions for Profile Operations",
             "description": "Implement backend API service functions for retrieving and updating user profile information and preferences.",
-            "dependencies": ["4.1"],
+            "dependencies": [
+              "4.1"
+            ],
             "details": "Create functions such as getUserProfile(), updateUserProfile(userData), and updateUserPreferences(preferences) to handle all profile-related data operations securely.",
             "status": "pending",
             "testStrategy": "Test API endpoints for correct data retrieval and updates. Ensure proper error handling and data validation on the backend."
@@ -204,7 +239,10 @@
             "id": 3,
             "title": "Implement Form Validation and Error Handling",
             "description": "Add robust validation for profile update forms and implement success/error notifications for all profile actions.",
-            "dependencies": ["4.1", "4.2"],
+            "dependencies": [
+              "4.1",
+              "4.2"
+            ],
             "details": "Ensure that user input is validated for correctness (e.g., valid email format, required fields) and that users receive clear feedback on success or failure of profile updates.",
             "status": "pending",
             "testStrategy": "Test form submissions with valid and invalid data. Confirm that appropriate notifications are shown for both successful and failed updates."
@@ -213,7 +251,11 @@
             "id": 4,
             "title": "Integrate User Preferences with Application State",
             "description": "Store and apply user preferences (such as theme and default view) in the User interface and ensure they persist and reflect immediately in the application.",
-            "dependencies": ["4.1", "4.2", "4.3"],
+            "dependencies": [
+              "4.1",
+              "4.2",
+              "4.3"
+            ],
             "details": "Map user preference fields to the User interface as specified in the PRD. Ensure changes to preferences are saved and immediately applied to the user's session.",
             "status": "pending",
             "testStrategy": "Change preferences and verify immediate effect in the UI. Reload the application to confirm persistence of preferences."
@@ -222,7 +264,12 @@
             "id": 5,
             "title": "Add Avatar Upload and Profile Data Typing",
             "description": "Implement optional avatar upload functionality and ensure all profile data is strictly typed according to the User interface definition.",
-            "dependencies": ["4.1", "4.2", "4.3", "4.4"],
+            "dependencies": [
+              "4.1",
+              "4.2",
+              "4.3",
+              "4.4"
+            ],
             "details": "Allow users to upload and update their profile avatar. Review and enforce type safety for all profile data fields as per the User interface.",
             "status": "pending",
             "testStrategy": "Test avatar upload with various image formats and sizes. Validate that all profile data conforms to the defined types and structure."
@@ -236,7 +283,9 @@
         "details": "1. Create ProjectService with API functions for project CRUD operations\n2. Implement ProjectList component to display all user projects with:\n   - Project cards showing title, description, and progress\n   - Status indicators (active, completed, archived)\n   - Creation date\n   - Circular progress rings using SVG\n3. Create ProjectForm component for creating and editing projects\n4. Implement ProjectView component as a container for task-related components\n5. Add project status toggle functionality (active/completed/archived)\n6. Create ProjectContext to manage project state\n7. Implement project deletion with confirmation modal\n8. Add sorting options for project list (by name, date, status)\n9. Ensure all components use the Project interface defined in the PRD",
         "testStrategy": "Test project creation, editing, and deletion. Verify projects list displays correctly with all required information. Test status changes are reflected immediately. Verify sorting functionality works correctly.",
         "priority": "high",
-        "dependencies": [3],
+        "dependencies": [
+          3
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -252,7 +301,9 @@
             "id": 2,
             "title": "Implement ProjectList Component with Sorting and Status Indicators",
             "description": "Create a ProjectList component to display all user projects, including project cards, status indicators, creation date, progress visualization, and sorting options.",
-            "dependencies": ["5.1"],
+            "dependencies": [
+              "5.1"
+            ],
             "details": "Project cards must show title, description, progress (with SVG circular rings), status (active, completed, archived), and creation date. Add sorting options by name, date, and status.",
             "status": "pending",
             "testStrategy": "Verify the list displays all projects with correct information, status indicators, and sorting functionality."
@@ -261,7 +312,9 @@
             "id": 3,
             "title": "Create ProjectForm Component for Project Creation and Editing",
             "description": "Develop a ProjectForm component that allows users to create new projects and edit existing ones, integrating with ProjectService.",
-            "dependencies": ["5.1"],
+            "dependencies": [
+              "5.1"
+            ],
             "details": "The form should support both creation and editing modes, validate input fields, and update the project list upon submission.",
             "status": "pending",
             "testStrategy": "Test project creation and editing workflows, ensuring form validation and correct updates to the project list."
@@ -270,7 +323,11 @@
             "id": 4,
             "title": "Build ProjectView Container and ProjectContext State Management",
             "description": "Implement the ProjectView container to host task-related components and create ProjectContext for managing project state across components.",
-            "dependencies": ["5.1", "5.2", "5.3"],
+            "dependencies": [
+              "5.1",
+              "5.2",
+              "5.3"
+            ],
             "details": "ProjectView should serve as the main container for project details and related tasks. ProjectContext must provide state and actions for all project operations.",
             "status": "pending",
             "testStrategy": "Verify that project state is consistent across components and that ProjectView correctly renders child components and updates."
@@ -279,7 +336,11 @@
             "id": 5,
             "title": "Add Project Status Toggle, Deletion with Confirmation, and Status Management",
             "description": "Implement functionality to toggle project status (active/completed/archived), delete projects with confirmation, and ensure status changes are reflected immediately.",
-            "dependencies": ["5.1", "5.2", "5.4"],
+            "dependencies": [
+              "5.1",
+              "5.2",
+              "5.4"
+            ],
             "details": "Provide UI controls for status toggling and deletion, including a confirmation modal for deletions. Ensure all status changes and deletions update the UI and state promptly.",
             "status": "pending",
             "testStrategy": "Test status toggling and deletion flows, confirming immediate UI updates and correct state management."
@@ -293,7 +354,9 @@
         "details": "1. Design and implement Dashboard component as the main landing page after login\n2. Create ProjectSummary component to display condensed project information\n3. Implement progress visualization components:\n   - CircularProgress component for project completion percentage\n   - LinearProgress component for task completion\n4. Add project statistics section showing:\n   - Total number of projects by status\n   - Recently updated projects\n   - Projects approaching deadlines\n5. Implement dashboard filters for viewing different project subsets\n6. Create responsive grid layout using Tailwind CSS grid classes\n7. Add quick-action buttons for creating new projects and accessing recent projects\n8. Implement skeleton loading states for dashboard elements\n9. Ensure all dashboard components are fully responsive",
         "testStrategy": "Test dashboard rendering with various numbers of projects. Verify progress indicators accurately reflect project completion. Test responsive layout at different screen sizes. Verify dashboard filters correctly display filtered projects.",
         "priority": "medium",
-        "dependencies": [5],
+        "dependencies": [
+          5
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -309,7 +372,9 @@
             "id": 2,
             "title": "Design Dashboard Layout and Components",
             "description": "Create wireframes and UI designs for the dashboard, including the main layout, ProjectSummary, progress visualization, statistics, filters, and quick-action buttons.",
-            "dependencies": ["6.1"],
+            "dependencies": [
+              "6.1"
+            ],
             "details": "Design an intuitive, user-friendly layout using responsive grid principles. Specify the placement and interaction of each component, ensuring clarity and ease of navigation.",
             "status": "pending",
             "testStrategy": "Conduct design reviews and usability testing with sample users to validate layout clarity and component accessibility across devices."
@@ -318,7 +383,9 @@
             "id": 3,
             "title": "Implement Dashboard Data Integration and State Management",
             "description": "Develop the logic to fetch, aggregate, and manage project data for all dashboard components, ensuring real-time updates and accurate metric calculations.",
-            "dependencies": ["6.2"],
+            "dependencies": [
+              "6.2"
+            ],
             "details": "Integrate with backend APIs or data sources to retrieve project information, progress metrics, and statistics. Implement state management to handle data updates, filtering, and loading states.",
             "status": "pending",
             "testStrategy": "Test data loading and updates with various project scenarios. Verify that all metrics and visualizations reflect the latest data and that filters work as intended."
@@ -327,7 +394,9 @@
             "id": 4,
             "title": "Develop and Integrate Visualization and Interaction Components",
             "description": "Build and connect the CircularProgress, LinearProgress, ProjectSummary, statistics, filters, and quick-action components, ensuring they are interactive and visually consistent.",
-            "dependencies": ["6.3"],
+            "dependencies": [
+              "6.3"
+            ],
             "details": "Implement each visualization and interaction component according to design specifications. Ensure components are accessible, responsive, and provide clear feedback (including skeleton loading states).",
             "status": "pending",
             "testStrategy": "Test each component in isolation and within the dashboard. Verify responsiveness, accessibility, and correct rendering of progress and statistics."
@@ -336,7 +405,9 @@
             "id": 5,
             "title": "Finalize Responsive Layout and Conduct End-to-End Testing",
             "description": "Apply responsive grid layout using Tailwind CSS, ensure all dashboard elements adapt to different screen sizes, and perform comprehensive end-to-end testing.",
-            "dependencies": ["6.4"],
+            "dependencies": [
+              "6.4"
+            ],
             "details": "Refine the dashboard layout for mobile, tablet, and desktop views. Conduct thorough testing to validate responsiveness, data accuracy, filter functionality, and overall user experience.",
             "status": "pending",
             "testStrategy": "Test dashboard rendering and interactions on multiple devices and browsers. Verify that all features work as expected and that the dashboard remains usable and visually consistent at all breakpoints."
@@ -350,7 +421,9 @@
         "details": "1. Create TaskService with API functions for task operations\n2. Implement TaskList component to display tasks for a selected project\n3. Create TaskItem component to display individual task details\n4. Implement task creation form with fields for title, description, priority, and due date\n5. Add task status management (not_started, in_progress, completed)\n6. Implement task editing functionality\n7. Create task deletion with confirmation\n8. Add basic task ordering by creation date or priority\n9. Ensure all components use the Task interface defined in the PRD\n10. Implement task count and basic progress calculation\n11. Add estimated hours and actual hours tracking",
         "testStrategy": "Test task creation, editing, and deletion. Verify task status changes are reflected immediately. Test task listing with various filters. Verify task ordering works correctly.",
         "priority": "high",
-        "dependencies": [5],
+        "dependencies": [
+          5
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -366,7 +439,9 @@
             "id": 2,
             "title": "Implement TaskList Component for Project-Based Display",
             "description": "Create a TaskList UI component that displays tasks associated with a selected project, supporting ordering by creation date or priority.",
-            "dependencies": ["7.1"],
+            "dependencies": [
+              "7.1"
+            ],
             "details": "The TaskList should fetch tasks from TaskService, display them in a list, and allow sorting by creation date or priority. It must update in real-time as tasks are added, edited, or deleted.",
             "status": "pending",
             "testStrategy": "Verify that the TaskList displays the correct tasks for the selected project and updates immediately on task changes. Test ordering functionality."
@@ -375,7 +450,9 @@
             "id": 3,
             "title": "Create TaskItem Component for Individual Task Details",
             "description": "Develop a TaskItem component to render individual task details, including title, description, priority, status, due date, estimated hours, and actual hours.",
-            "dependencies": ["7.2"],
+            "dependencies": [
+              "7.2"
+            ],
             "details": "TaskItem should support inline status updates, display all relevant fields, and provide controls for editing and deleting the task.",
             "status": "pending",
             "testStrategy": "Test that TaskItem displays all required fields and allows status changes, editing, and deletion with immediate UI updates."
@@ -384,7 +461,10 @@
             "id": 4,
             "title": "Implement Task Creation and Editing Forms",
             "description": "Build forms for creating and editing tasks, including fields for title, description, priority, due date, estimated hours, and actual hours.",
-            "dependencies": ["7.1", "7.2"],
+            "dependencies": [
+              "7.1",
+              "7.2"
+            ],
             "details": "Forms should validate input, support both creation and editing modes, and integrate with TaskService for data persistence.",
             "status": "pending",
             "testStrategy": "Test form validation, successful creation and editing of tasks, and error handling for invalid input."
@@ -393,7 +473,11 @@
             "id": 5,
             "title": "Add Task Status Management and Progress Calculation",
             "description": "Implement logic for managing task statuses (not_started, in_progress, completed) and calculate basic progress metrics such as task count and completion percentage.",
-            "dependencies": ["7.1", "7.2", "7.3"],
+            "dependencies": [
+              "7.1",
+              "7.2",
+              "7.3"
+            ],
             "details": "Status changes should be reflected in both the UI and backend. Progress calculation should aggregate task statuses for display in the TaskList.",
             "status": "pending",
             "testStrategy": "Test status transitions, verify progress metrics update correctly, and ensure UI reflects the current state of all tasks."
@@ -407,7 +491,9 @@
         "details": "1. Update TaskItem component to display subtasks\n2. Create SubtaskList component for rendering child tasks\n3. Implement subtask creation form within a parent task\n4. Add visual indentation for subtask hierarchy\n5. Implement cascade completion (completing a parent completes all children)\n6. Add subtask count to parent tasks\n7. Create collapsible subtask lists\n8. Update progress calculation to include subtask completion\n9. Ensure proper data structure for parent-child relationships using the parentTaskId field\n10. Add ability to convert subtasks to main tasks and vice versa\n11. Implement drag and drop for subtask reordering within a parent",
         "testStrategy": "Test subtask creation and display. Verify parent-child relationships are maintained correctly. Test cascade completion functionality. Verify progress calculation includes subtasks correctly.",
         "priority": "medium",
-        "dependencies": [7],
+        "dependencies": [
+          7
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -423,7 +509,9 @@
             "id": 2,
             "title": "Implement Subtask Creation and Display Components",
             "description": "Develop UI components for creating subtasks within a parent task and displaying them in a hierarchical, indented list.",
-            "dependencies": ["8.1"],
+            "dependencies": [
+              "8.1"
+            ],
             "details": "Update the TaskItem component to render subtasks. Create a SubtaskList component to display child tasks with visual indentation. Add a subtask creation form within the parent task view.",
             "status": "pending",
             "testStrategy": "Test UI for subtask creation and display. Ensure subtasks appear under their parent with correct indentation and can be created from the parent task view."
@@ -432,7 +520,9 @@
             "id": 3,
             "title": "Implement Cascade Completion and Progress Calculation",
             "description": "Ensure that completing a parent task marks all its subtasks as complete, and update progress calculations to include subtask completion.",
-            "dependencies": ["8.2"],
+            "dependencies": [
+              "8.2"
+            ],
             "details": "Add logic so that when a parent task is marked complete, all child subtasks are also completed. Update progress indicators to reflect the completion status of subtasks.",
             "status": "pending",
             "testStrategy": "Test cascade completion by marking a parent task as complete and verifying all subtasks are also completed. Check that progress bars and percentages update accordingly."
@@ -441,7 +531,9 @@
             "id": 4,
             "title": "Add Subtask Management Features",
             "description": "Implement features for subtask count display, collapsible subtask lists, and the ability to convert subtasks to main tasks and vice versa.",
-            "dependencies": ["8.2"],
+            "dependencies": [
+              "8.2"
+            ],
             "details": "Display the number of subtasks on parent tasks. Allow users to collapse or expand subtask lists. Provide UI and logic to convert a subtask to a main task and vice versa.",
             "status": "pending",
             "testStrategy": "Test subtask count accuracy, collapsible list functionality, and conversion between subtask and main task. Ensure UI updates reflect changes immediately."
@@ -450,7 +542,9 @@
             "id": 5,
             "title": "Enable Subtask Reordering with Drag and Drop",
             "description": "Implement drag and drop functionality to reorder subtasks within a parent task, updating their order in the data structure.",
-            "dependencies": ["8.2"],
+            "dependencies": [
+              "8.2"
+            ],
             "details": "Integrate a drag and drop library to allow users to reorder subtasks visually. Update the backend to persist the new order.",
             "status": "pending",
             "testStrategy": "Test drag and drop reordering of subtasks. Verify that the new order is saved and reflected in both the UI and data model after refresh."
@@ -464,7 +558,9 @@
         "details": "1. Install and configure react-beautiful-dnd: `npm install react-beautiful-dnd @types/react-beautiful-dnd`\n2. Create DraggableTaskList component that wraps TaskList\n3. Implement Droppable container for task lists\n4. Create Draggable wrapper for TaskItem components\n5. Implement reordering logic to update task order property\n6. Add visual feedback during drag operations\n7. Create API function to persist new task order\n8. Implement optimistic UI updates for drag operations\n9. Add keyboard accessibility for drag and drop operations\n10. Handle edge cases like dragging between different status columns\n11. Ensure smooth animations during drag operations with CSS transitions",
         "testStrategy": "Test drag and drop functionality between different positions. Verify task order is persisted after page refresh. Test keyboard accessibility for drag operations. Verify visual feedback during drag operations.",
         "priority": "high",
-        "dependencies": [7],
+        "dependencies": [
+          7
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -480,7 +576,9 @@
             "id": 2,
             "title": "Implement Droppable Task List Container",
             "description": "Create a Droppable component to define the area where tasks can be reordered via drag and drop.",
-            "dependencies": ["9.1"],
+            "dependencies": [
+              "9.1"
+            ],
             "details": "Wrap the task list in a Droppable component, assign a unique droppableId, and apply provided props and refs to the container element.",
             "status": "pending",
             "testStrategy": "Check that the task list area accepts draggable items and displays the placeholder during drag."
@@ -489,7 +587,9 @@
             "id": 3,
             "title": "Wrap Task Items with Draggable Components",
             "description": "Make each TaskItem draggable by wrapping it in a Draggable component and assigning unique draggableIds.",
-            "dependencies": ["9.2"],
+            "dependencies": [
+              "9.2"
+            ],
             "details": "Map over the task list and render each TaskItem inside a Draggable, passing the required index and draggableId props.",
             "status": "pending",
             "testStrategy": "Confirm that individual tasks can be picked up and moved within the list."
@@ -498,7 +598,9 @@
             "id": 4,
             "title": "Implement Task Reordering Logic and State Updates",
             "description": "Handle the onDragEnd event to update the task order in state and persist changes via API.",
-            "dependencies": ["9.3"],
+            "dependencies": [
+              "9.3"
+            ],
             "details": "Write the onDragEnd handler to reorder tasks in local state, trigger optimistic UI updates, and call an API function to persist the new order.",
             "status": "pending",
             "testStrategy": "Drag tasks to new positions, verify immediate UI update, and confirm order is saved after refresh."
@@ -507,7 +609,9 @@
             "id": 5,
             "title": "Enhance Accessibility and Visual Feedback",
             "description": "Add keyboard accessibility for drag operations and implement visual feedback such as highlighting and smooth animations.",
-            "dependencies": ["9.4"],
+            "dependencies": [
+              "9.4"
+            ],
             "details": "Ensure keyboard controls work for drag and drop, add CSS transitions for smooth movement, and provide visual cues during drag operations.",
             "status": "pending",
             "testStrategy": "Test drag and drop with keyboard, verify visual feedback, and check for smooth animations during reordering."
@@ -521,7 +625,9 @@
         "details": "1. Research and select an appropriate AI API (OpenAI, Anthropic Claude, etc.)\n2. Create AIService with functions for communicating with the chosen API\n3. Implement prompt engineering to format requests for optimal task breakdown\n4. Create TaskGenerationForm component for user input\n5. Implement response parsing to convert AI output to Task objects\n6. Add error handling for API failures and rate limiting\n7. Implement loading states during AI processing\n8. Create retry mechanism for failed requests\n9. Add validation of AI-generated tasks before saving\n10. Implement feedback mechanism for improving AI responses\n11. Consider implementing a fallback to local task templates if AI service is unavailable",
         "testStrategy": "Test AI task generation with various project descriptions. Verify generated tasks follow the required format. Test error handling with simulated API failures. Verify rate limiting handling works correctly.",
         "priority": "high",
-        "dependencies": [7],
+        "dependencies": [
+          7
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -537,7 +643,9 @@
             "id": 2,
             "title": "Develop AIService Module",
             "description": "Implement a service module to handle communication with the selected AI API, including authentication, request formatting, and response handling.",
-            "dependencies": ["10.1"],
+            "dependencies": [
+              "10.1"
+            ],
             "details": "Create reusable functions for sending prompts and receiving responses. Ensure secure handling of API keys and support for future extensibility.",
             "status": "pending",
             "testStrategy": "Test API connectivity and response handling with mock and real requests. Validate error handling for failed or malformed requests."
@@ -546,7 +654,9 @@
             "id": 3,
             "title": "Implement Prompt Engineering Logic",
             "description": "Design and implement prompt templates and formatting logic to optimize AI-generated task breakdowns from project descriptions.",
-            "dependencies": ["10.2"],
+            "dependencies": [
+              "10.2"
+            ],
             "details": "Develop prompt structures that yield clear, actionable, and well-structured task lists. Iterate on prompt design based on output quality.",
             "status": "pending",
             "testStrategy": "Evaluate AI responses to various prompt formats. Measure clarity, relevance, and completeness of generated tasks."
@@ -555,7 +665,9 @@
             "id": 4,
             "title": "Build Task Generation User Interface",
             "description": "Create a user-facing form component for submitting project descriptions and initiating AI-powered task generation.",
-            "dependencies": ["10.3"],
+            "dependencies": [
+              "10.3"
+            ],
             "details": "Design and implement a responsive form with input validation, loading indicators, and error messaging. Integrate with the AIService module.",
             "status": "pending",
             "testStrategy": "Test form usability, validation, and integration with the AI backend. Simulate user flows and error scenarios."
@@ -564,7 +676,9 @@
             "id": 5,
             "title": "Parse and Validate AI Output into Task Objects",
             "description": "Develop logic to parse AI-generated responses into structured Task objects, including validation and error handling.",
-            "dependencies": ["10.4"],
+            "dependencies": [
+              "10.4"
+            ],
             "details": "Implement parsing routines to extract tasks from AI output, handle edge cases, and ensure data integrity before saving.",
             "status": "pending",
             "testStrategy": "Test parsing with diverse AI outputs, including malformed or unexpected responses. Verify that only valid tasks are persisted."
@@ -578,7 +692,9 @@
         "details": "1. Create TaskFilters component with filter options for:\n   - Status (not_started, in_progress, completed)\n   - Priority (low, medium, high)\n   - Due date ranges\n   - Project selection\n2. Implement SearchBar component for text-based searching\n3. Create filter state management in TaskContext\n4. Implement client-side filtering logic\n5. Add URL parameter synchronization for sharing filtered views\n6. Create SavedFilters functionality for frequently used filters\n7. Implement clear filters button\n8. Add visual indicators for active filters\n9. Ensure responsive design for filter components on mobile\n10. Implement debounced search for performance\n11. Add keyboard shortcuts for common filter operations",
         "testStrategy": "Test filtering with various combinations of filters. Verify search functionality finds relevant tasks. Test URL parameter synchronization. Verify filter state is maintained during navigation.",
         "priority": "medium",
-        "dependencies": [7],
+        "dependencies": [
+          7
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -594,7 +710,9 @@
             "id": 2,
             "title": "Implement Filter State Management and Client-side Filtering Logic",
             "description": "Create state management for filters and search queries within TaskContext and implement logic to filter tasks on the client side based on selected criteria.",
-            "dependencies": ["11.1"],
+            "dependencies": [
+              "11.1"
+            ],
             "details": "Ensure that filter state is centralized, supports dynamic updates, and that filtering logic efficiently narrows down tasks according to all active filters and search terms.",
             "status": "pending",
             "testStrategy": "Test that applying, combining, and clearing filters and search terms updates the task list in real time and as expected."
@@ -603,7 +721,9 @@
             "id": 3,
             "title": "Synchronize Filter State with URL Parameters",
             "description": "Enable synchronization of filter and search state with URL parameters to allow sharing and bookmarking of filtered task views.",
-            "dependencies": ["11.2"],
+            "dependencies": [
+              "11.2"
+            ],
             "details": "Implement logic to read from and write to URL parameters when filters or search terms change, ensuring state is preserved on navigation and reload.",
             "status": "pending",
             "testStrategy": "Test that filtered views can be shared via URL, and that reloading or navigating back/forward maintains the correct filter state."
@@ -612,7 +732,9 @@
             "id": 4,
             "title": "Add SavedFilters, Clear Filters, and Visual Indicators",
             "description": "Implement functionality for saving frequently used filter combinations, a button to clear all filters, and visual indicators to show which filters are active.",
-            "dependencies": ["11.2"],
+            "dependencies": [
+              "11.2"
+            ],
             "details": "Allow users to save and quickly apply filter sets, provide a clear filters button, and visually highlight active filters for clarity.",
             "status": "pending",
             "testStrategy": "Test saving, applying, and deleting saved filters; verify the clear filters button resets all filters; confirm visual indicators accurately reflect active filters."
@@ -621,7 +743,10 @@
             "id": 5,
             "title": "Optimize for Performance, Accessibility, and Responsiveness",
             "description": "Implement debounced search input, keyboard shortcuts for common filter actions, and ensure all filter components are responsive and accessible on mobile devices.",
-            "dependencies": ["11.1", "11.2"],
+            "dependencies": [
+              "11.1",
+              "11.2"
+            ],
             "details": "Debounce search input to reduce unnecessary filtering, add keyboard shortcuts for efficiency, and ensure the UI adapts to different screen sizes and is accessible via keyboard and screen readers.",
             "status": "pending",
             "testStrategy": "Test search performance with rapid input, verify keyboard shortcuts trigger correct actions, and check filter usability and layout on various devices and with assistive technologies."
@@ -635,7 +760,9 @@
         "details": "1. Enhance ThemeProvider context with theme persistence\n2. Configure Tailwind CSS for dark mode using the 'class' strategy\n3. Create theme color variables in a central configuration\n4. Implement ThemeToggle component with smooth transition animation\n5. Add system preference detection for initial theme\n6. Ensure all components have proper styling for both themes\n7. Implement 200ms transitions between theme switches as specified\n8. Verify contrast ratios meet WCAG 2.1 AA compliance\n9. Add theme-specific focus styles for keyboard navigation\n10. Create theme preview in user preferences\n11. Ensure theme affects all custom components consistently",
         "testStrategy": "Test theme switching between light and dark modes. Verify theme persistence across page refreshes. Test system preference detection. Verify contrast ratios meet accessibility standards using automated tools.",
         "priority": "medium",
-        "dependencies": [2],
+        "dependencies": [
+          2
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -651,7 +778,9 @@
             "id": 2,
             "title": "Configure Tailwind CSS and Centralize Theme Variables",
             "description": "Set up Tailwind CSS for dark mode using the 'class' strategy and define theme color variables in a central configuration.",
-            "dependencies": ["12.1"],
+            "dependencies": [
+              "12.1"
+            ],
             "details": "Update Tailwind configuration to enable dark mode via class. Create a central file for theme color variables to ensure consistency across components.",
             "status": "pending",
             "testStrategy": "Verify that toggling the dark mode class updates styles as expected. Ensure all color variables are accessible and used throughout the app."
@@ -660,7 +789,10 @@
             "id": 3,
             "title": "Implement ThemeToggle Component with Animated Transitions",
             "description": "Develop a ThemeToggle UI component that allows users to switch between light and dark modes, including a smooth 200ms transition animation.",
-            "dependencies": ["12.1", "12.2"],
+            "dependencies": [
+              "12.1",
+              "12.2"
+            ],
             "details": "Create a toggle button that updates the theme context and triggers a CSS transition for theme changes. Ensure the animation duration matches the specification.",
             "status": "pending",
             "testStrategy": "Test the toggle for correct theme switching and smoothness of the transition animation. Confirm the animation duration is 200ms."
@@ -669,7 +801,10 @@
             "id": 4,
             "title": "Apply Theme Styles and Ensure Accessibility Compliance",
             "description": "Update all components to support both themes, verify contrast ratios meet WCAG 2.1 AA, and add theme-specific focus styles for keyboard navigation.",
-            "dependencies": ["12.2", "12.3"],
+            "dependencies": [
+              "12.2",
+              "12.3"
+            ],
             "details": "Audit all UI components for proper styling in both light and dark modes. Use automated tools to check color contrast and add accessible focus indicators.",
             "status": "pending",
             "testStrategy": "Test all components in both themes for visual correctness and accessibility. Use tools to verify contrast ratios and keyboard navigation focus styles."
@@ -678,7 +813,9 @@
             "id": 5,
             "title": "Implement Theme Preview and Consistency Across Custom Components",
             "description": "Add a theme preview feature in user preferences and ensure the theme system consistently affects all custom components.",
-            "dependencies": ["12.4"],
+            "dependencies": [
+              "12.4"
+            ],
             "details": "Develop a preview section where users can see both themes before applying. Review all custom components to guarantee theme variables and styles are applied uniformly.",
             "status": "pending",
             "testStrategy": "Test the preview feature for accurate theme representation. Verify all custom components update correctly when the theme changes."
@@ -692,7 +829,10 @@
         "details": "1. Create CircularProgress component for project cards using SVG\n2. Implement LinearProgress component for task lists\n3. Add numerical percentage indicators alongside visual components\n4. Create progress calculation utilities for projects and task lists\n5. Implement color coding based on progress percentage\n6. Add animations for progress changes\n7. Ensure all progress components are accessible with proper ARIA attributes\n8. Create ProjectProgress component that aggregates task completion\n9. Implement TaskProgress component for subtask progress\n10. Add hover tooltips with detailed progress information\n11. Ensure all progress components work correctly in both themes",
         "testStrategy": "Test progress calculation with various task completion scenarios. Verify visual indicators accurately reflect calculated progress. Test accessibility of progress components with screen readers. Verify animations work correctly.",
         "priority": "medium",
-        "dependencies": [6, 7],
+        "dependencies": [
+          6,
+          7
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -708,7 +848,9 @@
             "id": 2,
             "title": "Implement Progress Calculation Utilities",
             "description": "Develop utility functions to accurately calculate progress percentages for projects and task lists, including aggregation of subtask completion.",
-            "dependencies": ["13.1"],
+            "dependencies": [
+              "13.1"
+            ],
             "details": "Create functions that compute overall progress based on completed and total tasks or subtasks, supporting both individual and aggregated views.",
             "status": "pending",
             "testStrategy": "Test utilities with different task and subtask completion scenarios to ensure accurate percentage calculations."
@@ -717,7 +859,10 @@
             "id": 3,
             "title": "Integrate Numerical and Color-Coded Indicators",
             "description": "Enhance visual components by displaying numerical percentage values and applying color coding based on progress thresholds.",
-            "dependencies": ["13.1", "13.2"],
+            "dependencies": [
+              "13.1",
+              "13.2"
+            ],
             "details": "Add numerical percentage labels next to progress bars and circles, and implement dynamic color changes (e.g., red/yellow/green) to reflect progress status.",
             "status": "pending",
             "testStrategy": "Check that numerical indicators and color coding update correctly as progress changes, and validate color accessibility."
@@ -726,7 +871,10 @@
             "id": 4,
             "title": "Add Animations and Accessibility Features",
             "description": "Implement smooth animations for progress changes and ensure all components are accessible with proper ARIA attributes and keyboard navigation.",
-            "dependencies": ["13.1", "13.3"],
+            "dependencies": [
+              "13.1",
+              "13.3"
+            ],
             "details": "Apply animated transitions to progress updates and add ARIA roles, labels, and keyboard support to meet accessibility standards.",
             "status": "pending",
             "testStrategy": "Test animations for smoothness and responsiveness; use screen readers and keyboard navigation to verify accessibility compliance."
@@ -735,7 +883,9 @@
             "id": 5,
             "title": "Enhance User Interaction and Theming Support",
             "description": "Add interactive features such as hover tooltips with detailed progress information and ensure all components support both light and dark themes.",
-            "dependencies": ["13.4"],
+            "dependencies": [
+              "13.4"
+            ],
             "details": "Implement tooltips that display additional progress details on hover and verify that all visual elements adapt correctly to theme changes.",
             "status": "pending",
             "testStrategy": "Test tooltip visibility and content accuracy; switch between themes to confirm consistent appearance and readability."
@@ -749,7 +899,11 @@
         "details": "1. Implement responsive layouts using Tailwind CSS breakpoints\n2. Create mobile-specific navigation with bottom tabs or slide-out menu\n3. Optimize touch interactions for mobile users\n4. Implement responsive tables that collapse to cards on small screens\n5. Create mobile-friendly forms with appropriate input types\n6. Add swipe gestures for common actions on mobile\n7. Implement responsive font sizing using Tailwind's text utilities\n8. Optimize modal and dropdown positioning on mobile\n9. Create touch-friendly drag and drop for task reordering\n10. Test and optimize for various device sizes and orientations\n11. Implement mobile-specific loading states and error messages",
         "testStrategy": "Test responsive layouts at various breakpoints. Verify touch interactions work correctly on mobile devices. Test performance on low-end mobile devices. Verify all features are accessible on mobile.",
         "priority": "medium",
-        "dependencies": [2, 5, 7],
+        "dependencies": [
+          2,
+          5,
+          7
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -765,7 +919,9 @@
             "id": 2,
             "title": "Design and Implement Mobile-Specific Navigation",
             "description": "Create intuitive mobile navigation patterns such as bottom tab bars or slide-out menus to enhance usability on small screens.",
-            "dependencies": ["14.1"],
+            "dependencies": [
+              "14.1"
+            ],
             "details": "Develop navigation components optimized for touch, with large tap targets and minimal menu items. Ensure navigation is accessible and easy to use with one hand.",
             "status": "pending",
             "testStrategy": "Test navigation on various mobile devices for ease of use, accessibility, and responsiveness. Verify that navigation adapts to orientation changes."
@@ -774,7 +930,9 @@
             "id": 3,
             "title": "Optimize Touch Interactions and Mobile UI Elements",
             "description": "Enhance all interactive elements for touch, including buttons, forms, and gestures, ensuring a smooth and intuitive mobile experience.",
-            "dependencies": ["14.1"],
+            "dependencies": [
+              "14.1"
+            ],
             "details": "Increase touch target sizes, implement swipe gestures for common actions, and use mobile-friendly input types in forms. Ensure all UI elements are easily operable with fingers.",
             "status": "pending",
             "testStrategy": "Test all interactive elements on real devices for responsiveness and accuracy. Verify swipe gestures and form inputs work as intended."
@@ -783,7 +941,9 @@
             "id": 4,
             "title": "Implement Responsive Tables and Card Interfaces",
             "description": "Transform tables into card-based layouts on small screens and use card UI patterns for content containers to improve readability and usability.",
-            "dependencies": ["14.1"],
+            "dependencies": [
+              "14.1"
+            ],
             "details": "Use Tailwind CSS utilities to collapse tables into stacked cards on mobile. Apply card interfaces for key content sections, ensuring they resize and reflow appropriately.",
             "status": "pending",
             "testStrategy": "Test table and card layouts on various screen sizes. Verify that information remains clear and accessible, and that cards adapt fluidly to device width."
@@ -792,7 +952,9 @@
             "id": 5,
             "title": "Optimize Performance and Mobile-Specific Feedback",
             "description": "Enhance mobile performance by optimizing images, minimizing scripts, and implementing mobile-specific loading states and error messages.",
-            "dependencies": ["14.1"],
+            "dependencies": [
+              "14.1"
+            ],
             "details": "Compress and resize images for mobile, enable lazy loading, and reduce third-party scripts. Design loading indicators and error messages tailored for mobile users.",
             "status": "pending",
             "testStrategy": "Measure page load times on mobile devices. Test loading and error states for clarity and responsiveness. Use tools like Google PageSpeed Insights to validate optimizations."
@@ -806,7 +968,10 @@
         "details": "1. Add proper ARIA attributes to all interactive components\n2. Implement keyboard navigation for all interactive elements\n3. Create focus management system for modals and dropdowns\n4. Add skip links for keyboard users\n5. Ensure proper heading hierarchy throughout the application\n6. Implement high contrast mode support\n7. Add screen reader announcements for dynamic content changes\n8. Create accessible form error messages\n9. Implement proper label associations for all form inputs\n10. Add keyboard shortcuts with a keyboard shortcut helper\n11. Test with screen readers (NVDA, VoiceOver, JAWS)\n12. Ensure color is not the only means of conveying information",
         "testStrategy": "Test keyboard navigation throughout the application. Verify screen reader announcements work correctly. Test focus management in modals and dynamic content. Verify contrast ratios meet WCAG 2.1 AA standards.",
         "priority": "high",
-        "dependencies": [2, 12],
+        "dependencies": [
+          2,
+          12
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -822,7 +987,9 @@
             "id": 2,
             "title": "Implement Core Accessibility Features",
             "description": "Apply necessary accessibility enhancements such as ARIA attributes, keyboard navigation, focus management, skip links, and proper heading hierarchy throughout the application.",
-            "dependencies": ["15.1"],
+            "dependencies": [
+              "15.1"
+            ],
             "details": "Update UI components to include ARIA roles and properties, ensure all interactive elements are keyboard accessible, manage focus in modals and dropdowns, add skip links, and enforce semantic heading structure.",
             "status": "pending",
             "testStrategy": "Verify all interactive elements are operable via keyboard, focus is managed correctly, and headings are structured logically."
@@ -831,7 +998,9 @@
             "id": 3,
             "title": "Enhance Visual and Informational Accessibility",
             "description": "Implement high contrast mode, ensure color is not the sole means of conveying information, and provide accessible error messages and label associations for forms.",
-            "dependencies": ["15.2"],
+            "dependencies": [
+              "15.2"
+            ],
             "details": "Add a toggle for high contrast mode, use patterns or icons in addition to color, ensure all form inputs have associated labels and accessible error messages.",
             "status": "pending",
             "testStrategy": "Test contrast ratios, verify alternative indicators for color-coded information, and check form accessibility with screen readers."
@@ -840,7 +1009,9 @@
             "id": 4,
             "title": "Integrate Dynamic Content Announcements and Keyboard Shortcuts",
             "description": "Add screen reader announcements for dynamic content changes and implement accessible keyboard shortcuts with a visible helper.",
-            "dependencies": ["15.3"],
+            "dependencies": [
+              "15.3"
+            ],
             "details": "Use ARIA live regions for dynamic updates, provide keyboard shortcuts for common actions, and display a helper modal listing available shortcuts.",
             "status": "pending",
             "testStrategy": "Test dynamic content updates with screen readers and verify keyboard shortcuts are discoverable and operable."
@@ -849,7 +1020,9 @@
             "id": 5,
             "title": "Perform Accessibility Verification and Continuous Monitoring",
             "description": "Test the application with multiple screen readers (NVDA, VoiceOver, JAWS), validate against WCAG 2.1 AA criteria, and establish a process for ongoing accessibility monitoring.",
-            "dependencies": ["15.4"],
+            "dependencies": [
+              "15.4"
+            ],
             "details": "Conduct thorough manual testing with different assistive technologies, document compliance status, and set up regular accessibility reviews.",
             "status": "pending",
             "testStrategy": "Verify all WCAG 2.1 AA success criteria are met through manual and automated testing, and ensure ongoing compliance through scheduled audits."
@@ -863,7 +1036,12 @@
         "details": "1. Implement code splitting using React.lazy() and Suspense\n2. Add memoization for expensive calculations using useMemo and useCallback\n3. Implement virtualized lists for large task collections using react-window\n4. Optimize re-renders with React.memo for pure components\n5. Add debouncing for search and filter inputs\n6. Implement optimistic UI updates for better perceived performance\n7. Add skeleton loading states for async operations\n8. Optimize images and assets with proper sizing and formats\n9. Implement efficient state management to prevent unnecessary renders\n10. Add performance monitoring using web vitals\n11. Implement prefetching for likely user navigation paths",
         "testStrategy": "Measure and compare performance metrics before and after optimizations. Test with large datasets to verify virtualization works correctly. Verify code splitting reduces initial bundle size. Test optimistic UI updates for common actions.",
         "priority": "medium",
-        "dependencies": [5, 7, 9, 10],
+        "dependencies": [
+          5,
+          7,
+          9,
+          10
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -920,7 +1098,12 @@
         "details": "1. Implement React Error Boundary components at strategic levels\n2. Create ErrorFallback component for graceful degradation\n3. Implement toast notification system for user feedback\n4. Add global error handler for uncaught exceptions\n5. Create retry mechanisms for failed API calls\n6. Implement offline detection and recovery\n7. Add validation for all user inputs\n8. Create meaningful error messages for different error types\n9. Implement logging service for error tracking\n10. Add recovery options for common error scenarios\n11. Create error reporting mechanism for users to submit bug reports",
         "testStrategy": "Test error boundaries with simulated component errors. Verify API error handling with mocked failed requests. Test offline recovery mechanisms. Verify error messages are clear and actionable.",
         "priority": "high",
-        "dependencies": [3, 5, 7, 10],
+        "dependencies": [
+          3,
+          5,
+          7,
+          10
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -936,7 +1119,9 @@
             "id": 2,
             "title": "Design and Integrate Custom Error Fallback UIs",
             "description": "Create user-friendly ErrorFallback components that provide clear, actionable feedback and recovery options when errors occur.",
-            "dependencies": ["17.1"],
+            "dependencies": [
+              "17.1"
+            ],
             "details": "Develop fallback UIs tailored to different app sections, ensuring messages are informative and guide users on next steps (e.g., retry, reload, contact support). Integrate these with error boundaries.",
             "status": "pending",
             "testStrategy": "Trigger errors in various components and verify that the correct fallback UI appears with appropriate messaging and recovery actions."
@@ -954,7 +1139,9 @@
             "id": 4,
             "title": "Develop User Feedback and Notification System",
             "description": "Implement a toast notification system to inform users of errors, warnings, and recovery actions in real time.",
-            "dependencies": ["17.3"],
+            "dependencies": [
+              "17.3"
+            ],
             "details": "Integrate a toast or snackbar library to display contextual error messages and status updates. Ensure notifications are accessible and non-intrusive.",
             "status": "pending",
             "testStrategy": "Simulate various error scenarios and verify that appropriate toast notifications are shown to users with clear, actionable information."
@@ -963,7 +1150,10 @@
             "id": 5,
             "title": "Create Automated Recovery and Retry Mechanisms",
             "description": "Develop mechanisms to automatically retry failed API calls and provide users with manual recovery options for common error scenarios.",
-            "dependencies": ["17.3", "17.4"],
+            "dependencies": [
+              "17.3",
+              "17.4"
+            ],
             "details": "Implement exponential backoff and retry logic for network/API failures. Offer UI controls for users to retry failed actions or recover from offline states.",
             "status": "pending",
             "testStrategy": "Mock API failures and offline scenarios, then verify that retry logic works as intended and users can recover from errors via provided UI options."
@@ -977,7 +1167,19 @@
         "details": "1. Implement end-to-end testing with Cypress or Playwright\n2. Create test scenarios covering all critical user flows\n3. Perform cross-browser testing on major browsers\n4. Conduct performance testing with Lighthouse\n5. Implement automated accessibility testing with axe-core\n6. Conduct user testing with representative users\n7. Fix any identified issues and edge cases\n8. Optimize bundle size and loading performance\n9. Create production build configuration\n10. Implement analytics for user behavior tracking\n11. Prepare deployment documentation and scripts\n12. Conduct final security review",
         "testStrategy": "Run comprehensive end-to-end tests covering all major user flows. Perform cross-browser testing on Chrome, Firefox, Safari, and Edge. Conduct performance testing with Lighthouse. Verify accessibility compliance with automated tools.",
         "priority": "high",
-        "dependencies": [3, 5, 7, 9, 10, 12, 13, 14, 15, 16, 17],
+        "dependencies": [
+          3,
+          5,
+          7,
+          9,
+          10,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -993,7 +1195,9 @@
             "id": 2,
             "title": "Automated Performance and Accessibility Testing",
             "description": "Conduct automated performance testing using Lighthouse and accessibility testing with axe-core to ensure the application meets performance benchmarks and accessibility standards.",
-            "dependencies": ["18.1"],
+            "dependencies": [
+              "18.1"
+            ],
             "details": "Integrate Lighthouse for performance audits and axe-core for accessibility checks into the CI pipeline. Analyze results and prioritize remediation of critical findings.",
             "status": "pending",
             "testStrategy": "Run Lighthouse and axe-core on production builds. Track performance scores and accessibility violations, ensuring all critical issues are resolved."
@@ -1002,7 +1206,9 @@
             "id": 3,
             "title": "User Acceptance and Exploratory Testing",
             "description": "Facilitate user testing sessions with representative users to validate usability, gather feedback, and uncover edge cases not covered by automated tests.",
-            "dependencies": ["18.2"],
+            "dependencies": [
+              "18.2"
+            ],
             "details": "Recruit representative users, prepare test scripts, and observe interactions. Collect feedback and document any usability issues or unexpected behaviors.",
             "status": "pending",
             "testStrategy": "Analyze user feedback and session recordings. Ensure all critical usability issues are addressed before proceeding."
@@ -1011,7 +1217,9 @@
             "id": 4,
             "title": "Issue Resolution, Optimization, and Final Build Preparation",
             "description": "Fix all identified issues and edge cases, optimize bundle size and loading performance, and configure the production build for deployment.",
-            "dependencies": ["18.3"],
+            "dependencies": [
+              "18.3"
+            ],
             "details": "Address bugs and edge cases from previous testing phases. Apply performance optimizations such as code splitting and asset optimization. Finalize production build configuration.",
             "status": "pending",
             "testStrategy": "Re-run automated and manual tests on the optimized build to confirm all issues are resolved and performance targets are met."
@@ -1020,7 +1228,9 @@
             "id": 5,
             "title": "Deployment Readiness and Final Review",
             "description": "Implement analytics for user behavior tracking, prepare deployment documentation and scripts, and conduct a final security review before deployment.",
-            "dependencies": ["18.4"],
+            "dependencies": [
+              "18.4"
+            ],
             "details": "Integrate analytics tools, write deployment guides and scripts, and perform a comprehensive security audit to ensure readiness for production release.",
             "status": "pending",
             "testStrategy": "Verify analytics events are tracked correctly, deployment scripts function as intended, and no critical security vulnerabilities remain."
@@ -1030,7 +1240,7 @@
     ],
     "metadata": {
       "created": "2025-07-20T13:17:18.005Z",
-      "updated": "2025-07-20T13:17:18.005Z",
+      "updated": "2025-07-23T10:02:42.882Z",
       "description": "Tasks for master context"
     }
   }
